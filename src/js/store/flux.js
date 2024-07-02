@@ -12,13 +12,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			user:{
+				name:"Deimian Vásquez",
+				age:18
+			}
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
+			
 			loadSomeData: () => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
@@ -37,6 +42,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+			},
+			changeName:()=>{
+				setStore({
+					user:{
+						name:"Martin Coimbra"
+					}
+				})
 			}
 		}
 	};
